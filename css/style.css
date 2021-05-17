@@ -56,6 +56,9 @@ body.as-iframe::-webkit-scrollbar-thumb {
 .header__titleLink__text__prefixIcon {
   display: inline-block;
   margin-right: 8px;
+  font-size: 30px;
+  vertical-align: middle;
+  transform: translateY(-3px);
 }
 
 .footer {

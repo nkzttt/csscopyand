@@ -44,6 +44,9 @@ body {
       &__prefixIcon {
         display: inline-block;
         margin-right: variables.$spacing-unit;
+        font-size: 30px;
+        vertical-align: middle;
+        transform: translateY(-3px);
       }
     }
   }
