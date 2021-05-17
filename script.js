@@ -48,7 +48,7 @@
 })();
 
 /**
- * quote jscopyand
+ * quote csscopyand
  */
 (function () {
   var quoters = document.querySelectorAll('[data-js-selector="quote"]');

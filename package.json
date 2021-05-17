@@ -1,5 +1,5 @@
 {
-  "name": "jscopyand",
+  "name": "csscopyand",
   "version": "1.0.0",
   "description": "JavaScriptコピペ館",
   "scripts": {
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nkzttt/jscopyand.git"
+    "url": "git+https://github.com/nkzttt/csscopyand.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nkzttt/jscopyand/issues"
+    "url": "https://github.com/nkzttt/csscopyand/issues"
   },
-  "homepage": "https://github.com/nkzttt/jscopyand#readme",
+  "homepage": "https://github.com/nkzttt/csscopyand#readme",
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "chokidar": "^3.5.1",

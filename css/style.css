@@ -168,11 +168,11 @@ body.as-iframe::-webkit-scrollbar-thumb {
   border: dashed 3px #dedebf;
 }
 
-.jscopyand__codeBlock {
+.csscopyand__codeBlock {
   position: relative;
   margin-bottom: 24px;
 }
-.jscopyand__codeBlock__copy {
+.csscopyand__codeBlock__copy {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -184,10 +184,10 @@ body.as-iframe::-webkit-scrollbar-thumb {
   text-align: center;
   cursor: pointer;
 }
-.jscopyand__codeBlock__copy__icon {
+.csscopyand__codeBlock__copy__icon {
   margin-right: 8px;
 }
-.jscopyand__codeBlock:hover > .jscopyand__codeBlock__copy {
+.csscopyand__codeBlock:hover > .csscopyand__codeBlock__copy {
   display: block;
 }
 
