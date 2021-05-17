@@ -1,0 +1,60 @@
+<!-- prettier-ignore -->
+<% const localTitle = 'ドロップダウンメニュー'; %>
+
+<!-- prettier-ignore -->
+<% const demo = `
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <p>準備中</p>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const demoScript = `
+<script data-js-selector="sourceLazy" data-js-attributes="csscopyand">
+  (function () {
+    console.log('wip');
+  })();
+</script>
+`; %>
+
+<!-- prettier-ignore -->
+<% const howToUse = `
+<div class="howToUse">
+  <p class="howToUse__description">
+    準備中<br />
+    <code class="inlineCode">wip</code><br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const jsDescription = `
+<div class="jsDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedJsCodes' })"
+  >
+    JSコードの解説を見てみる
+  </p>
+  <div class="jsDescription__body">
+    <p class="jsDescription__body__text">
+      準備中<br />
+      <code class="inlineCode">wip</code><br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="csscopyand, 1, 3"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<%- include('../_ejsModules/itemLayout', { localTitle, demo, demoScript, howToUse, jsDescription }) %>

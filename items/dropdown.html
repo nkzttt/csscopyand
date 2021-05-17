@@ -18,26 +18,26 @@
 <html lang="ja">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-NXBYB3XL7L"
-></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
+<!--<script-->
+<!--  async-->
+<!--  src="https://www.googletagmanager.com/gtag/js?id=G-NXBYB3XL7L"-->
+<!--&gt;</script>-->
+<!--<script>-->
+<!--  window.dataLayer = window.dataLayer || [];-->
+<!--  function gtag() {-->
+<!--    dataLayer.push(arguments);-->
+<!--  }-->
+<!--  gtag('js', new Date());-->
 
-  gtag('config', 'G-NXBYB3XL7L');
-</script>
+<!--  gtag('config', 'G-NXBYB3XL7L');-->
+<!--</script>-->
 <meta charset="UTF-8" />
 <meta
   name="viewport"
   content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
 />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<title>開閉項目（アコーディオン） | CSSコピペ館</title>
+<title>ドロップダウンメニュー | CSSコピペ館</title>
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" href="/csscopyand/css/style.css" />
 
@@ -58,26 +58,12 @@
 </header>
 
       <main class="main">
-        <h1 class="main__title">開閉項目（アコーディオン）</h1>
+        <h1 class="main__title">ドロップダウンメニュー</h1>
         <section class="itemSection">
           <h2 class="itemSection__title">デモ</h2>
           
 <div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
-  <p data-csscopyand="accordion">押してください</p>
-  <p>
-    ありがとうございます！<br />
-    あなたは１番目のアイテムを開きました！<br />
-  </p>
-  <p data-csscopyand="accordion">押してください</p>
-  <p>
-    ありがとうございます！<br />
-    あなたは２番目のアイテムを開きました！<br />
-  </p>
-  <p data-csscopyand="accordion">押してください</p>
-  <p>
-    ありがとうございます！<br />
-    あなたは３番目のアイテムを開きました！<br />
-  </p>
+  <p>準備中</p>
 </div>
 
         </section>
@@ -113,12 +99,8 @@
           
 <div class="howToUse">
   <p class="howToUse__description">
-    HTMLでは隣接する２つの要素が必要になります。<br />
-    １つ目がトリガー要素です。<br />
-    ２つ目が開閉対象です。<br />
-    １つ目のトリガー要素に<code class="inlineCode"
-      >data-csscopyand="accordion"</code
-    >を付与してください。<br />
+    準備中<br />
+    <code class="inlineCode">wip</code><br />
   </p>
   <div>
     <p class="button" data-js-selector="accordion" data-js-attributes="remove">
@@ -143,42 +125,12 @@
   </p>
   <div class="jsDescription__body">
     <p class="jsDescription__body__text">
-      このアコーディオン機能は１画面で複数の設置を想定しているため、<code
-        class="inlineCode"
-        >document.querySelectorAll</code
-      >でトリガーとなる全ての要素を取得し、変数に格納します。<br />
+      準備中<br />
+      <code class="inlineCode">wip</code><br />
     </p>
     <pre
       class="jsDescription__body__code"
-    ><code class="language-js" data-js-selector="quote" data-js-attributes="csscopyand, 2"></code></pre>
-    <p class="jsDescription__body__text">
-      取得した全トリガー要素に対して反復処理を行っていきます。<br />
-    </p>
-    <pre
-      class="jsDescription__body__code"
-    ><code class="language-js" data-js-selector="quote" data-js-attributes="csscopyand, 3"></code></pre>
-    <p class="jsDescription__body__text">
-      トリガー要素に隣接する次の要素をアコーディオンの本文とし、初期状態を非表示にします。<br />
-    </p>
-    <pre
-      class="jsDescription__body__code"
-    ><code class="language-js" data-js-selector="quote" data-js-attributes="csscopyand, 4"></code></pre>
-    <p class="jsDescription__body__text">
-      トリガー要素が押された時の処理を登録します。<br />
-    </p>
-    <pre
-      class="jsDescription__body__code"
-    ><code class="language-js" data-js-selector="quote" data-js-attributes="csscopyand, 5"></code></pre>
-    <p class="jsDescription__body__text">
-      <code class="inlineCode">display</code
-      >スタイルが既に指定されていれば消す、指定されてなければ<code
-        class="inlineCode"
-        >none</code
-      >を付与する、という内容です。<br />
-    </p>
-    <pre
-      class="jsDescription__body__code"
-    ><code class="language-js" data-js-selector="quote" data-js-attributes="csscopyand, 6, 9"></code></pre>
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="csscopyand, 1, 3"></code></pre>
   </div>
 </div>
 
@@ -247,16 +199,7 @@
  
 <script data-js-selector="sourceLazy" data-js-attributes="csscopyand">
   (function () {
-    var triggers = document.querySelectorAll('[data-csscopyand="accordion"]');
-    triggers.forEach(function (trigger) {
-      trigger.nextElementSibling.style.display = 'none';
-      trigger.addEventListener('click', function () {
-        this.nextElementSibling.style.display = this.nextElementSibling.style
-          .display
-          ? ''
-          : 'none';
-      });
-    });
+    console.log('wip');
   })();
 </script>
 
