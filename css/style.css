@@ -1,19 +1,23 @@
 @charset "UTF-8";
 .textLink {
-  color: #969696;
+  color: #558c03;
+}
+.textLink:hover {
+  color: #97bf04;
+  text-decoration: none;
 }
 
 .button {
   display: table;
   padding: 8px;
-  border: solid 1px #969696;
-  color: #969696;
+  border: solid 1px #558c03;
+  color: #558c03;
   font-size: 14px;
   cursor: pointer;
 }
 
 body {
-  background: #4d4d4d;
+  background: #558c03;
   color: #4d4d4d;
   font-size: 16px;
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
@@ -27,18 +31,18 @@ body.as-iframe::-webkit-scrollbar:vertical {
 }
 body.as-iframe::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: #969696;
+  background: #e1f25e;
 }
 
 .container {
   position: relative;
   z-index: 1;
-  background: #f2f2e9;
+  background: #f2f2f2;
 }
 
 .header {
   padding: 16px;
-  background: #dedebf;
+  background: #e7f291;
 }
 .header__titleLink {
   display: inline-block;
@@ -57,8 +61,8 @@ body.as-iframe::-webkit-scrollbar-thumb {
 .footer {
   padding: 16px;
   padding-bottom: 80px;
-  background: #4d4d4d;
-  color: #fafafa;
+  background: #558c03;
+  color: #f2f2f2;
 }
 .footer__contact {
   list-style: none;
@@ -70,11 +74,11 @@ body.as-iframe::-webkit-scrollbar-thumb {
   margin-right: 8px;
 }
 .footer__contact__item__link {
-  color: #fafafa;
+  color: #f2f2f2;
 }
 
 .copyright {
-  color: #969696;
+  color: #f2f2f2;
   font-size: 12px;
 }
 .copyright__mark {
@@ -90,7 +94,7 @@ body.as-iframe::-webkit-scrollbar-thumb {
   right: 16px;
   padding: 16px;
   color: #4d4d4d;
-  background: #dedebf;
+  background: #e7f291;
   text-decoration: none;
 }
 .notification__icon {
@@ -111,11 +115,26 @@ body.as-iframe::-webkit-scrollbar-thumb {
 }
 .main__title {
   display: table;
-  padding: 8px 16px;
+  position: relative;
+  padding: 16px;
   margin-bottom: 40px;
-  background: #dedebf;
   font-size: 18px;
   font-weight: normal;
+}
+.main__title::before, .main__title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to left, #e1f25e, #97bf04);
+}
+.main__title::before {
+  top: 0;
+}
+.main__title::after {
+  bottom: 0;
 }
 
 .keywordFilter {
@@ -129,8 +148,7 @@ body.as-iframe::-webkit-scrollbar-thumb {
 .keywordFilter__input {
   height: 40px;
   padding: 0 8px;
-  border: solid 1px #969696;
-  background: #fafafa;
+  background: #e7f291;
 }
 
 .indexes {
@@ -144,12 +162,25 @@ body.as-iframe::-webkit-scrollbar-thumb {
 }
 .indexes__item__link {
   display: block;
+  position: relative;
   padding: 8px 16px;
-  background: #dedebf;
+  background: #f2f2f2;
   color: #4d4d4d;
-}
-.indexes__item__link:hover {
   text-decoration: none;
+}
+.indexes__item__link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to left, #e1f25e, #97bf04);
+  transition: width ease-out 500ms;
+}
+.indexes__item__link:hover::after {
+  width: 100%;
 }
 
 .itemSection {
@@ -165,7 +196,7 @@ body.as-iframe::-webkit-scrollbar-thumb {
 
 .demo {
   padding: 24px;
-  border: dashed 3px #dedebf;
+  background: #e7f291;
 }
 
 .csscopyand__codeBlock {
@@ -179,6 +210,8 @@ body.as-iframe::-webkit-scrollbar-thumb {
   right: 0;
   display: none;
   padding: 16px;
+  border-left: solid 10px #97bf04;
+  border-bottom: solid 3px #97bf04;
   background: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   text-align: center;
@@ -226,14 +259,6 @@ body.as-iframe::-webkit-scrollbar-thumb {
 .jsBasics__item:last-child {
   margin-bottom: 0;
 }
-.jsBasics__item__trigger {
-  display: table;
-  padding: 8px;
-  border: solid 1px #969696;
-  color: #969696;
-  font-size: 14px;
-  cursor: pointer;
-}
 .jsBasics__item__body {
   margin-top: calc(16px - 0.35em);
   margin-bottom: -0.35em;
@@ -244,8 +269,12 @@ body.as-iframe::-webkit-scrollbar-thumb {
   display: table;
   margin-bottom: 40px;
   cursor: pointer;
-  color: #969696;
+  color: #558c03;
   text-decoration: underline;
+}
+.backLink:hover {
+  color: #97bf04;
+  text-decoration: none;
 }
 .backLink__icon {
   margin-right: 8px;
@@ -254,5 +283,5 @@ body.as-iframe::-webkit-scrollbar-thumb {
 .indexesFrame {
   width: 100%;
   height: 30vh;
-  border: solid 1px #dedebf;
+  border: solid 1px #558c03;
 }

@@ -1,14 +1,18 @@
 @use "./variables";
 
 .textLink {
-  color: variables.$color-gray;
+  color: variables.$color-visual-thicker;
+  &:hover {
+    color: variables.$color-visual-thick;
+    text-decoration: none;
+  }
 }
 
 .button {
   display: table;
   padding: variables.$spacing-unit;
-  border: solid 1px variables.$color-gray;
-  color: variables.$color-gray;
+  border: solid 1px variables.$color-visual-thicker;
+  color: variables.$color-visual-thicker;
   font-size: variables.$size-small;
   cursor: pointer;
 }

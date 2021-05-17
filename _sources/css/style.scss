@@ -1,9 +1,10 @@
 @use "./_modules/variables";
 @use "./_modules/functions";
+@use "./_modules/mixins";
 @use "./_modules/utilStyles";
 
 body {
-  background: variables.$color-black;
+  background: variables.$color-visual-thicker;
   color: variables.$color-black;
   font-size: variables.$size-medium;
   font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',
@@ -18,7 +19,8 @@ body {
     }
     &::-webkit-scrollbar-thumb {
       border-radius: variables.$spacing-unit;
-      background: variables.$color-gray;
+      // TODO
+      background: variables.$color-visual-thin;
     }
   }
 }
@@ -26,12 +28,12 @@ body {
 .container {
   position: relative;
   z-index: 1;
-  background: variables.$color-visual-thin;
+  background: variables.$color-white;
 }
 
 .header {
   padding: functions.multiplicationSpacingUnit(2);
-  background: variables.$color-visual-thick;
+  background: variables.$color-visual-thinner;
   &__titleLink {
     display: inline-block;
     color: variables.$color-black;
@@ -50,7 +52,7 @@ body {
 .footer {
   padding: functions.multiplicationSpacingUnit(2);
   padding-bottom: functions.multiplicationSpacingUnit(10);
-  background: variables.$color-black;
+  background: variables.$color-visual-thicker;
   color: variables.$color-white;
   &__contact {
     list-style: none;
@@ -66,7 +68,7 @@ body {
   }
 }
 .copyright {
-  color: variables.$color-gray;
+  color: variables.$color-white;
   font-size: variables.$size-minimum;
   &__mark {
     display: inline-block;
@@ -81,7 +83,7 @@ body {
   right: functions.multiplicationSpacingUnit(2);
   padding: functions.multiplicationSpacingUnit(2);
   color: variables.$color-black;
-  background: variables.$color-visual-thick;
+  background: variables.$color-visual-thinner;
   text-decoration: none;
   &__icon {
     font-size: variables.$size-large;
@@ -101,11 +103,26 @@ body {
   padding: functions.multiplicationSpacingUnit(5);
   &__title {
     display: table;
-    padding: variables.$spacing-unit functions.multiplicationSpacingUnit(2);
+    position: relative;
+    padding: functions.multiplicationSpacingUnit(2);
     margin-bottom: functions.multiplicationSpacingUnit(5);
-    background: variables.$color-visual-thick;
     font-size: variables.$size-large;
     font-weight: normal;
+    &::before, &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 3px;
+      @include mixins.gradient();
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
   }
 }
 
@@ -119,8 +136,7 @@ body {
   &__input {
     height: functions.multiplicationSpacingUnit(5);
     padding: 0 variables.$spacing-unit;
-    border: solid 1px variables.$color-gray;
-    background: variables.$color-white;
+    background: variables.$color-visual-thinner;
   }
 }
 
@@ -133,11 +149,24 @@ body {
     }
     &__link {
       display: block;
+      position: relative;
       padding: variables.$spacing-unit functions.multiplicationSpacingUnit(2);
-      background: variables.$color-visual-thick;
+      background: variables.$color-white;
       color: variables.$color-black;
-      &:hover {
-        text-decoration: none;
+      text-decoration: none;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100px;
+        height: 3px;
+        @include mixins.gradient();
+        transition: width ease-out 500ms;
+      }
+      &:hover::after {
+        width: 100%;
       }
     }
   }
@@ -156,7 +185,7 @@ body {
 
 .demo {
   padding: functions.multiplicationSpacingUnit(3);
-  border: dashed 3px variables.$color-visual-thick;
+  background: variables.$color-visual-thinner;
 }
 
 .csscopyand {
@@ -170,6 +199,8 @@ body {
       right: 0;
       display: none;
       padding: functions.multiplicationSpacingUnit(2);
+      border-left: solid 10px variables.$color-visual-thick;
+      border-bottom: solid 3px variables.$color-visual-thick;
       background: rgba(255, 255, 255, 0.8);
       font-size: variables.$size-large;
       text-align: center;
@@ -221,14 +252,6 @@ body {
     &:last-child {
       margin-bottom: 0;
     }
-    &__trigger {
-      display: table;
-      padding: variables.$spacing-unit;
-      border: solid 1px variables.$color-gray;
-      color: variables.$color-gray;
-      font-size: variables.$size-small;
-      cursor: pointer;
-    }
     &__body {
       margin-top: calc(#{functions.multiplicationSpacingUnit(2)} - 0.35em);
       margin-bottom: -0.35em;
@@ -241,8 +264,12 @@ body {
   display: table;
   margin-bottom: functions.multiplicationSpacingUnit(5);
   cursor: pointer;
-  color: variables.$color-gray;
+  color: variables.$color-visual-thicker;
   text-decoration: underline;
+  &:hover {
+    color: variables.$color-visual-thick;
+    text-decoration: none;
+  }
   &__icon {
     margin-right: variables.$spacing-unit;
   }
@@ -251,5 +278,5 @@ body {
 .indexesFrame {
   width: 100%;
   height: 30vh;
-  border: solid 1px variables.$color-visual-thick;
+  border: solid 1px variables.$color-visual-thicker;
 }

@@ -1,0 +1,5 @@
+@use "./variables";
+
+@mixin gradient() {
+  background: linear-gradient(to left, variables.$color-visual-thin, variables.$color-visual-thick);
+}
