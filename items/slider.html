@@ -1,0 +1,338 @@
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-NXBYB3XL7L"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-NXBYB3XL7L');
+</script>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>スライダー（カルーセル） | JavaScriptコピペ館</title>
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+<link rel="stylesheet" href="/jscopyand/css/style.css" />
+
+<link rel="stylesheet" href="/jscopyand/lib/prism.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <a href="/jscopyand/" class="header__titleLink">
+    
+    <p class="header__titleLink__text">
+      <span class="header__titleLink__text__prefixIcon fas fa-code"></span
+      >JavaScriptコピペ館
+    </p>
+    
+  </a>
+</header>
+
+      <main class="main">
+        <h1 class="main__title">スライダー（カルーセル）</h1>
+        <section class="itemSection">
+          <h2 class="itemSection__title">デモ</h2>
+          
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <div data-jscopyand="slider">
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAEElEQVR42mNkSJv5nwEJAAAbbQIAppxHEQAAAABJRU5ErkJggg=="
+    />
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAEElEQVR42mNkmFn2nwEJAAAcgAIQ07TX7wAAAABJRU5ErkJggg=="
+    />
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAEElEQVR42mOcGcLwnwEJAAAbkQHubngF7wAAAABJRU5ErkJggg=="
+    />
+  </div>
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">JSコードコピー</h2>
+          <div class="jscopyand">
+            <div class="jscopyand__codeBlock">
+              <pre
+                class="jscopyand__codeBlock__codes"
+              ><code class="language-js" data-js-selector="jscopyand"></code></pre>
+              <p
+                class="jscopyand__codeBlock__copy"
+                data-js-selector="copy"
+                data-js-attributes="jscopyand"
+                onclick="gtag('event', 'cv', { event_category: 'copiedJsCodes' })"
+              >
+                <span
+                  class="far fa-clipboard jscopyand__codeBlock__copy__icon"
+                ></span
+                >コピーする
+              </p>
+            </div>
+            <p>
+              <a href="/jscopyand/helps/js.html" class="textLink"
+                >どこに書けばいい？どこで読み込めばいい？ JavaScript
+                の基本を確認する</a
+              >
+            </p>
+          </div>
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">使い方</h2>
+          
+<div class="howToUse">
+  <p class="howToUse__description">
+    <code class="inlineCode">div</code>要素を１つ作り、そこに<code
+      class="inlineCode"
+      >data-jscopyand="slider"</code
+    >を付与してください。<br />
+    その下に任意の画像を置いてください。<br />
+    用意する画像のサイズは全て同じにしてください。<br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">解説</h2>
+          
+<div class="jsDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedJsCodes' })"
+  >
+    JSコードの解説を見てみる
+  </p>
+  <div class="jsDescription__body">
+    <p class="jsDescription__body__text">
+      スライダー要素を特定し、変数に格納します。<br />
+      スライダー要素の子要素の画像一覧も変数に格納します。<br />
+      <code class="inlineCode">children</code
+      >で取得した値はそのままでは反復処理ができないため、<code
+        class="inlineCode"
+        >Array.from()</code
+      >で配列に変換します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 2, 3"></code></pre>
+    <p class="jsDescription__body__text">
+      アニメーションの準備をします。<br />
+      <code class="inlineCode">div</code
+      >要素を作り、スライダー要素の中に配置します。<br />
+      画像一覧はこの<code class="inlineCode">div</code
+      >要素の中に移動します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 4, 8"></code></pre>
+    <p class="jsDescription__body__text">
+      スライドアニメーションは１枚目の画像を基準に行います。<br />
+      １枚目の画像を親コンテナの横幅いっぱいにした後、縦・横のサイズを取得して変数に格納します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 9, 11"></code></pre>
+    <p class="jsDescription__body__text">
+      各要素にスタイルを当てていきます。<br />
+      スタイル設定はわかりやすいように<code class="inlineCode">setupStyles</code
+      >というオブジェクトにまとめておきます。<br />
+      １枚目の画像を基準にサイズを設定する汎用関数<code class="inlineCode"
+        >_setImageSizeWithFirstImage</code
+      >を定義しています。<br />
+      これを利用しながら各画像や親<code class="inlineCode">div</code
+      >要素のサイズを設定していきます。<br />
+      <code class="inlineCode">innerDiv</code
+      >には横並びにするスタイルとアニメーションスタイルを当てています。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 12, 35"></code></pre>
+    <p class="jsDescription__body__text">
+      スライダーの設定をします。<br />
+      スライダー設定はわかりやすいように<code class="inlineCode"
+        >setupSlider</code
+      >というオブジェクトにまとめておきます。<br />
+      現在の表示位置を保持するプロパティ<code class="inlineCode"
+        >_currentIndex</code
+      >、それを利用して次の表示位置を決める関数<code class="inlineCode"
+        >_next</code
+      >、さらに一定間隔で表示位置をずらしていく関数<code class="inlineCode"
+        >slide</code
+      >を定義しています。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 36, 53"></code></pre>
+    <p class="jsDescription__body__text">
+      <code class="inlineCode">setupStyles</code>と<code class="inlineCode"
+        >setupSlider</code
+      >に用意した実行関数<code class="inlineCode">run</code
+      >を呼べば完了です。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 54, 55"></code></pre>
+  </div>
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">ヘルプ・コンタクト</h2>
+          <p class="help">
+            機能に関するご質問は、このページの下部に表示されている Twitter
+            のアイコンから Twitter に遷移後、 DM 等でご連絡ください。<br />
+            導入サポートやカスタマイズも有償にてお受け致しますので、 DM
+            等でご連絡ください。<br />
+          </p>
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">他のコードを探す</h2>
+          <iframe src="/jscopyand/" class="indexesFrame"></iframe>
+        </section>
+      </main>
+      <footer class="footer">
+  <ul class="footer__contact">
+    <li class="footer__contact__item">
+      <a
+        href="https://twitter.com/bgn_nakazato"
+        class="footer__contact__item__link"
+      >
+        <span class="fab fa-twitter"></span>
+      </a>
+    </li>
+    <li class="footer__contact__item">
+      <a
+        href="https://github.com/nkzttt/jscopyand"
+        class="footer__contact__item__link"
+      >
+        <span class="fab fa-github"></span>
+      </a>
+    </li>
+  </ul>
+  <p class="copyright">
+    <span class="copyright__mark">&copy;</span> 2021 nkzttt
+  </p>
+</footer>
+<a href="https://twitter.com/bgn_nakazato" target="_blank" class="notification">
+  <div class="notification__icon far fa-hand-point-right"></div>
+  <p class="notification__text">
+    リクエスト受付中です。<br />
+    Twitter の固定ツイートか DM にてご連絡ください。<br />
+  </p>
+</a>
+
+    </div>
+    <!--download from https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript-->
+<script src="/jscopyand/lib/prism.js" data-manual></script>
+<script>
+  Prism.hooks.add('before-sanity-check', function (env) {
+    env.element.innerHTML = env.element.innerHTML.replace(/<br>/g, '\n');
+    env.code = env.element.textContent;
+  });
+</script>
+<!-- icons are on https://fontawesome.com/icons?d=gallery&m=free -->
+<script
+  src="https://kit.fontawesome.com/f7818d968c.js"
+  crossorigin="anonymous"
+></script>
+<script src="/jscopyand/script.js"></script>
+
+ 
+<script data-js-selector="sourceLazy" data-js-attributes="jscopyand">
+  (function () {
+    var slider = document.querySelector('[data-jscopyand="slider"]');
+    var images = Array.from(slider.children);
+    var innerDiv = document.createElement('div');
+    slider.append(innerDiv);
+    images.forEach(function (image) {
+      innerDiv.append(image);
+    });
+    images[0].style.width = '100%';
+    images[0].style.height = 'auto';
+    var firstImageSize = { width: images[0].width, height: images[0].height };
+    var setupStyles = {
+      _setImageSizeWithFirstImage(element, multiplicationNum) {
+        element.style.width =
+          firstImageSize.width * (multiplicationNum || 1) + 'px';
+        element.style.height = firstImageSize.height + 'px';
+      },
+      slider() {
+        this._setImageSizeWithFirstImage(slider);
+        slider.style.overflow = 'hidden';
+      },
+      images() {
+        images.forEach(this._setImageSizeWithFirstImage);
+      },
+      innerDiv() {
+        innerDiv.style.display = 'flex';
+        this._setImageSizeWithFirstImage(innerDiv, images.length);
+        innerDiv.style.transition = 'transform 500ms ease-in-out';
+      },
+      run() {
+        this.slider();
+        this.images();
+        this.innerDiv();
+      },
+    };
+    var setupSlider = {
+      _currentIndex: 0,
+      _next() {
+        if (++this._currentIndex === images.length) this._currentIndex = 0;
+        innerDiv.style.transform =
+          'translateX(' + -firstImageSize.width * this._currentIndex + 'px)';
+      },
+      slide() {
+        var _this = this;
+        setTimeout(function () {
+          _this._next();
+          _this.slide();
+        }, 3000);
+      },
+      run() {
+        this.slide();
+      },
+    };
+    setupStyles.run();
+    setupSlider.run();
+  })();
+</script>
+
+  </body>
+</html>
+

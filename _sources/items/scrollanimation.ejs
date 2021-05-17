@@ -1,0 +1,129 @@
+<!-- prettier-ignore -->
+<% const localTitle = 'スクロールアニメーション'; %>
+
+<!-- prettier-ignore -->
+<% const demo = `
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <style>
+    .demoScrollAnimation {
+      padding: 50vh 0;
+    }
+  </style>
+  <p data-jscopyand="scrollanimation" data-jscopyand-attributes="target">
+    押してください。特定の要素までスクロールします。
+  </p>
+  <p class="demoScrollAnimation">余白です。</p>
+  <p id="target" data-jscopyand="scrollanimation">
+    押してください。ページトップまでスクロールします。
+  </p>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const demoScript = `
+<script data-js-selector="sourceLazy" data-js-attributes="jscopyand">
+  (function () {
+    var triggers = document.querySelectorAll(
+      '[data-jscopyand="scrollanimation"]'
+    );
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var targetId = this.dataset.jscopyandAttributes;
+        var target = targetId
+          ? document.querySelector('#' + targetId)
+          : document.body;
+        if (!target) return;
+        window.scrollTo({
+          top: window.pageYOffset + target.getBoundingClientRect().top,
+          behavior: 'smooth',
+        });
+      });
+    });
+  })();
+</script>
+`; %>
+
+<!-- prettier-ignore -->
+<% const howToUse = `
+<div class="howToUse">
+  <p class="howToUse__description">
+    スクロールアニメーションのトリガーとなる要素に<code class="inlineCode"
+      >data-jscopyand="scrollanimation"</code
+    >を付与してください。<br />
+    特定の要素までスクロールする場合は、対象の要素に<code class="inlineCode"
+      >id</code
+    >属性を付与した後、トリガー要素に<code class="inlineCode"
+      >data-jscopyand-attributes="id名"</code
+    >を付与してください。<br />
+    トリガー要素に<code class="inlineCode"
+      >data-jscopyand-attributes="id名"</code
+    >を付与しなかった場合はページトップへスクロールアニメーションします。<br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const jsDescription = `
+<div class="jsDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedJsCodes' })"
+  >
+    JSコードの解説を見てみる
+  </p>
+  <div class="jsDescription__body">
+    <p class="jsDescription__body__text">
+      このスクロールアニメーション機能は１画面で複数の設置を想定しているため、<code
+        class="inlineCode"
+        >document.querySelectorAll</code
+      >でトリガーとなる全ての要素を取得し、変数に格納します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 2, 4"></code></pre>
+    <p class="jsDescription__body__text">
+      取得した全トリガー要素に対して反復処理を行い、イベントを設定していきます。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 5, 6"></code></pre>
+    <p class="jsDescription__body__text">
+      スクロール先の要素を特定します。<br />
+      <code class="inlineCode">data-jscopyand-attributes="id名"</code
+      >が付与されている場合は、その値を使って要素の特定を試みます。<br />
+      付与されていない場合はページトップへスクロールさせるため、<code
+        class="inlineCode"
+        >document.body</code
+      >にします。<br />
+      要素が特定できなかった場合には処理を終了します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 7, 11"></code></pre>
+    <p class="jsDescription__body__text">
+      <code class="inlineCode">window.scrollTo</code
+      >で任意の位置までスクロールさせます。<br />
+      オプションの<code class="inlineCode">top</code
+      >にスクロール後の位置を指定します。<br />
+      これは現在のスクロール位置 +
+      スクロール先の要素までのスクロール量で求めます。<br />
+      オプションに<code class="inlineCode">behavior: 'smooth'</code
+      >を指定することでアニメーションになります。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 12, 15"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<%- include('../_ejsModules/itemLayout', { localTitle, demo, demoScript, howToUse, jsDescription }) %>

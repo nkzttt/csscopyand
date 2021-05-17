@@ -1,0 +1,99 @@
+<!-- prettier-ignore -->
+<% const localTitle = '全画面ローディング'; %>
+
+<!-- prettier-ignore -->
+<% const demo = `
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <style>
+    .demoLoading {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+    }
+  </style>
+  <p data-jscopyand="loading" class="demoLoading">LOADING...</p>
+  <!-- 以下は本機能には関係ありません -->
+  <p>ページを再読み込みしてお試しください。</p>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const demoScript = `
+<script data-js-selector="sourceLazy" data-js-attributes="jscopyand">
+  (function () {
+    var startLoadingTime = Date.now();
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var loading = document.querySelector('[data-jscopyand="loading"]');
+        loading.remove();
+      }, Math.max(1000 - (Date.now() - startLoadingTime), 0));
+    });
+  })();
+</script>
+`; %>
+
+<!-- prettier-ignore -->
+<% const howToUse = `
+<div class="howToUse">
+  <p class="howToUse__description">
+    全画面ローディング用の要素を１つ用意し、<code class="inlineCode"
+      >data-jscopyand="accordion"</code
+    >を付与してください。<br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const jsDescription = `
+<div class="jsDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedJsCodes' })"
+  >
+    JSコードの解説を見てみる
+  </p>
+  <div class="jsDescription__body">
+    <p class="jsDescription__body__text">
+      最初にファイル読み込みが開始される前の現在時刻を変数に格納します。<br />
+      一瞬でローディングが消えるとチカチカしてしまうため、最低○秒は表示する、という制御のために使用します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 2"></code></pre>
+    <p class="jsDescription__body__text">
+      <code class="inlineCode">window</code>に<code class="inlineCode"
+        >load</code
+      >というイベントを設定することで、ページのファイル読み込みが終わった時に任意の処理を行うことができます。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 3"></code></pre>
+    <p class="jsDescription__body__text">
+      基本的にはローディング要素を特定し、<code class="inlineCode">remove</code
+      >で削除すれば完成です。<br />
+      冒頭で述べたチカチカ回避のため、ファイル読み込みが終了した現在時刻と、ファイル読み込みが開始される前の保持していた時刻を比較し、最低１秒間はローディングを表示するようにタイマーを設定しています。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 4, 7"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<%- include('../_ejsModules/itemLayout', { localTitle, demo, demoScript, howToUse, jsDescription }) %>

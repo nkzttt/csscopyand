@@ -1,0 +1,292 @@
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-NXBYB3XL7L"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-NXBYB3XL7L');
+</script>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>画面に入ったら〜 | JavaScriptコピペ館</title>
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+<link rel="stylesheet" href="/jscopyand/css/style.css" />
+
+<link rel="stylesheet" href="/jscopyand/lib/prism.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <a href="/jscopyand/" class="header__titleLink">
+    
+    <p class="header__titleLink__text">
+      <span class="header__titleLink__text__prefixIcon fas fa-code"></span
+      >JavaScriptコピペ館
+    </p>
+    
+  </a>
+</header>
+
+      <main class="main">
+        <h1 class="main__title">画面に入ったら〜</h1>
+        <section class="itemSection">
+          <h2 class="itemSection__title">デモ</h2>
+          
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <style>
+    .demoScrollIn {
+      margin-top: 100vh;
+    }
+  </style>
+  <p>スクロールしてください。特定の要素が画面内に入るとアラートが出ます。</p>
+  <p data-jscopyand="scrollin" class="demoScrollIn">１番目です。</p>
+  <p data-jscopyand="scrollin" class="demoScrollIn">２番目です。</p>
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">JSコードコピー</h2>
+          <div class="jscopyand">
+            <div class="jscopyand__codeBlock">
+              <pre
+                class="jscopyand__codeBlock__codes"
+              ><code class="language-js" data-js-selector="jscopyand"></code></pre>
+              <p
+                class="jscopyand__codeBlock__copy"
+                data-js-selector="copy"
+                data-js-attributes="jscopyand"
+                onclick="gtag('event', 'cv', { event_category: 'copiedJsCodes' })"
+              >
+                <span
+                  class="far fa-clipboard jscopyand__codeBlock__copy__icon"
+                ></span
+                >コピーする
+              </p>
+            </div>
+            <p>
+              <a href="/jscopyand/helps/js.html" class="textLink"
+                >どこに書けばいい？どこで読み込めばいい？ JavaScript
+                の基本を確認する</a
+              >
+            </p>
+          </div>
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">使い方</h2>
+          
+<div class="howToUse">
+  <p class="howToUse__description">
+    画面に入ったことを検知したい要素に対して
+    <code class="inlineCode">data-jscopyand="scrollin"</code
+    >を付与してください。<br />
+    任意の処理を<code class="inlineCode">callback</code
+    >関数の中に記述してください。<br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">解説</h2>
+          
+<div class="jsDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedJsCodes' })"
+  >
+    JSコードの解説を見てみる
+  </p>
+  <div class="jsDescription__body">
+    <p class="jsDescription__body__text">
+      監視対象となる要素全てを<code class="inlineCode"
+        >document.querySelectorAll</code
+      >で取得し、変数に格納します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 2"></code></pre>
+    <p class="jsDescription__body__text">
+      画面に入った時に処理したい内容を関数で定義します。<br />
+      引数には画面に入った要素が渡ってくるようにします。<br />
+      本デモでは画面に入った要素のテキストをアラートで出すようにしています。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 3, 5"></code></pre>
+    <p class="jsDescription__body__text">
+      監視の設定を行なっていきます。<br />
+      <code class="inlineCode">new IntersectionObserver</code
+      >の戻り値を使うことで監視ができます。<br />
+      この戻り値を変数に格納します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 6"></code></pre>
+    <p class="jsDescription__body__text">
+      <code class="inlineCode">IntersectionObserver</code
+      >の第１引数には、監視対象要素が画面に入った・出たときの処理を書いていきます。<br />
+      <code class="inlineCode">entries[0]</code
+      >には監視情報が入っています。<br />
+      画面に入った時を判断するには、<code class="inlineCode"
+        >entries[0].isIntersecting</code
+      >が<code class="inlineCode">true</code>かどうか？を確認します。<br />
+      <code class="inlineCode">entries[0].target</code
+      >には監視対象要素が入っているため、これを関数<code class="inlineCode"
+        >callback</code
+      >に渡します。<br />
+      一度画面に入ったら監視は不要のため、<code class="inlineCode"
+        >observer.unobserve(entries[0].target)</code
+      >で監視を解除しておきます。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 7, 12"></code></pre>
+    <p class="jsDescription__body__text">
+      <code class="inlineCode">IntersectionObserver</code
+      >の第２引数には監視の設定を書いていきます。<br />
+      <code class="inlineCode">rootMargin</code
+      >を指定すれば画面内に入ったと判断する境界位置をずらすことができます。<br />
+      <code class="inlineCode">threshold</code
+      >は対象要素が何割画面に入ったら、という割合を指定することができます。<br />
+      本デモでは対象要素の全体が画面内に入ったら、という設定にしています。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 13, 16"></code></pre>
+    <p class="jsDescription__body__text">
+      <code class="inlineCode">targets</code
+      >を反復処理して監視を開始します。<br />
+    </p>
+    <pre
+      class="jsDescription__body__code"
+    ><code class="language-js" data-js-selector="quote" data-js-attributes="jscopyand, 18, 20"></code></pre>
+  </div>
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">ヘルプ・コンタクト</h2>
+          <p class="help">
+            機能に関するご質問は、このページの下部に表示されている Twitter
+            のアイコンから Twitter に遷移後、 DM 等でご連絡ください。<br />
+            導入サポートやカスタマイズも有償にてお受け致しますので、 DM
+            等でご連絡ください。<br />
+          </p>
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">他のコードを探す</h2>
+          <iframe src="/jscopyand/" class="indexesFrame"></iframe>
+        </section>
+      </main>
+      <footer class="footer">
+  <ul class="footer__contact">
+    <li class="footer__contact__item">
+      <a
+        href="https://twitter.com/bgn_nakazato"
+        class="footer__contact__item__link"
+      >
+        <span class="fab fa-twitter"></span>
+      </a>
+    </li>
+    <li class="footer__contact__item">
+      <a
+        href="https://github.com/nkzttt/jscopyand"
+        class="footer__contact__item__link"
+      >
+        <span class="fab fa-github"></span>
+      </a>
+    </li>
+  </ul>
+  <p class="copyright">
+    <span class="copyright__mark">&copy;</span> 2021 nkzttt
+  </p>
+</footer>
+<a href="https://twitter.com/bgn_nakazato" target="_blank" class="notification">
+  <div class="notification__icon far fa-hand-point-right"></div>
+  <p class="notification__text">
+    リクエスト受付中です。<br />
+    Twitter の固定ツイートか DM にてご連絡ください。<br />
+  </p>
+</a>
+
+    </div>
+    <!--download from https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript-->
+<script src="/jscopyand/lib/prism.js" data-manual></script>
+<script>
+  Prism.hooks.add('before-sanity-check', function (env) {
+    env.element.innerHTML = env.element.innerHTML.replace(/<br>/g, '\n');
+    env.code = env.element.textContent;
+  });
+</script>
+<!-- icons are on https://fontawesome.com/icons?d=gallery&m=free -->
+<script
+  src="https://kit.fontawesome.com/f7818d968c.js"
+  crossorigin="anonymous"
+></script>
+<script src="/jscopyand/script.js"></script>
+
+ 
+<script data-js-selector="sourceLazy" data-js-attributes="jscopyand">
+  (function () {
+    var targets = document.querySelectorAll('[data-jscopyand="scrollin"]');
+    var callback = function (target) {
+      alert(target.innerText);
+    };
+    var observer = new IntersectionObserver(
+      function (entries) {
+        if (entries[0].isIntersecting) {
+          callback(entries[0].target);
+          observer.unobserve(entries[0].target);
+        }
+      },
+      {
+        rootMargin: '0px',
+        threshold: 1.0,
+      }
+    );
+    targets.forEach(function (target) {
+      observer.observe(target);
+    });
+  })();
+</script>
+
+  </body>
+</html>
+
