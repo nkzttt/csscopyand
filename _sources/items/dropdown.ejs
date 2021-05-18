@@ -2,27 +2,101 @@
 <% const localTitle = 'ドロップダウンメニュー'; %>
 
 <!-- prettier-ignore -->
-<% const demo = `
-<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
-  <p>準備中</p>
-</div>
+<% const demoStyle = `
+<style data-js-selector="sourceLazy" data-js-attributes="csscopyand">
+  .cca-dropdown {
+    list-style: none;
+    display: flex;
+    background-color: #fff;
+    color: #333;
+  }
+  .cca-dropdown > li {
+    position: relative;
+  }
+  .cca-dropdown > li + li {
+    border-left: solid 1px #eee;
+  }
+  .cca-dropdown > li > p {
+    padding: 16px 24px;
+    cursor: pointer;
+  }
+  .cca-dropdown > li > p:hover {
+    background-color: #eee;
+  }
+  .cca-dropdown > li > ul {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+  }
+  .cca-dropdown > li:hover > ul {
+    display: block;
+  }
+  .cca-dropdown > li > ul > li > a {
+    display: block;
+    padding: 16px 24px;
+    background-color: #fff;
+    color: #333;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .cca-dropdown > li > ul > li > a:hover {
+    background-color: #eee;
+  }
+  .cca-dropdown > li > ul > li + li {
+    border-top: solid 1px #eee;
+  }
+</style>
 `; %>
 
 <!-- prettier-ignore -->
-<% const demoScript = `
-<script data-js-selector="sourceLazy" data-js-attributes="csscopyand">
-  (function () {
-    console.log('wip');
-  })();
-</script>
+<% const demo = `
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <ul class="cca-dropdown">
+    <li>
+      <p>メニュー１</p>
+      <ul>
+        <li><a href="#">サブメニュー１</a></li>
+        <li><a href="#">サブメニュー１</a></li>
+        <li><a href="#">サブメニュー１</a></li>
+      </ul>
+    </li>
+    <li>
+      <p>メニュー２</p>
+      <ul>
+        <li><a href="#">サブメニュー１</a></li>
+        <li><a href="#">サブメニュー１</a></li>
+        <li><a href="#">サブメニュー１</a></li>
+      </ul>
+    </li>
+    <li>
+      <p>メニュー３</p>
+      <ul>
+        <li><a href="#">サブメニュー１</a></li>
+        <li><a href="#">サブメニュー１</a></li>
+        <li><a href="#">サブメニュー１</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
 `; %>
 
 <!-- prettier-ignore -->
 <% const howToUse = `
 <div class="howToUse">
   <p class="howToUse__description">
-    準備中<br />
-    <code class="inlineCode">wip</code><br />
+    <code class="inlineCode">ul</code>要素を１つ用意し、<code class="inlineCode"
+      >class="cca-dropdown"</code
+    >を付与してください。<br />
+    子要素の構成は直下に<code class="inlineCode">li</code
+    >要素、その子に第１のメニューボタンとなる<code class="inlineCode">p</code
+    >要素と第２のメニューボタンをまとめる<code class="inlineCode">ul</code
+    >要素を並べてください。<br />
+    第２のメニューボタンの構成は直下に<code class="inlineCode">li</code
+    >要素、その下にリンクの<code class="inlineCode">a</code
+    >要素を置いてください。<br />
   </p>
   <div>
     <p class="button" data-js-selector="accordion" data-js-attributes="remove">
@@ -34,27 +108,76 @@
 `; %>
 
 <!-- prettier-ignore -->
-<% const jsDescription = `
-<div class="jsDescription">
+<% const cssDescription = `
+<div class="cssDescription">
   <p
     class="button"
     data-js-selector="accordion"
     data-js-attributes="remove"
     onclick="gtag('event', 'cv', { event_category: 'openedJsCodes' })"
   >
-    JSコードの解説を見てみる
+    CSSコードの解説を見てみる
   </p>
-  <div class="jsDescription__body">
-    <p class="jsDescription__body__text">
-      準備中<br />
-      <code class="inlineCode">wip</code><br />
+  <div class="cssDescription__body">
+    <p class="cssDescription__body__text">
+      横並びは<code class="inlineCode">display: flex;</code>で実現します。<br />
     </p>
     <pre
-      class="jsDescription__body__code"
-    ><code class="language-js" data-js-selector="quote" data-js-attributes="csscopyand, 1, 3"></code></pre>
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 1, 6"></code></pre>
+    <p class="cssDescription__body__text">
+      第１のメニューを基準に第２のメニューの配置を決めるため、<code
+        class="inlineCode"
+        >position: relative;</code
+      >を当てておきます。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 7, 9"></code></pre>
+    <p class="cssDescription__body__text">
+      境界線はメニューの間にのみ出すようにするため、<code class="inlineCode"
+        >li</code
+      >要素が続いている場合にのみ右側に境界線を表示しています。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 10, 12"></code></pre>
+    <p class="cssDescription__body__text">
+      第１のメニューのホバー時のスタイルを当てておきます。<br />
+      <code class="inlineCode">cursor: pointer;</code
+      >でホバー時のカーソルをリンクと同様のものにしています。<br />
+      <code class="inlineCode">:hover</code
+      >という擬似要素でホバー時の背景色を少し明るいものに変更します。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 13, 19"></code></pre>
+    <p class="cssDescription__body__text">
+      第２のメニューの位置調整と、表示・非表示を実現していきます。<br />
+      第１のメニューを基準にするために<code class="inlineCode"
+        >position: absolute;</code
+      >を指定します。<br />
+      <code class="inlineCode">top: 100%;</code
+      >とすることで第１のメニューの下から表示されるようにします。<br />
+      <code class="inlineCode">z-index: 1;</code
+      >は他の要素よりも全面に配置するための指定です。<br />
+      表示・非表示は通常時を非表示に、<code class="inlineCode">:hover</code
+      >という擬似要素でホバーした時に表示されるようにします。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 20, 30"></code></pre>
+    <p class="cssDescription__body__text">
+      第２のメニューにもスタイルを当てていきます。<br />
+      <code class="inlineCode">white-space: nowrap;</code
+      >というスタイルは、横幅が第１のメニューに縛られないよう、改行を禁止して無理矢理横幅を伸ばすための指定です。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 31, 44"></code></pre>
   </div>
 </div>
 `; %>
 
 <!-- prettier-ignore -->
-<%- include('../_ejsModules/itemLayout', { localTitle, demo, demoScript, howToUse, jsDescription }) %>
+<%- include('../_ejsModules/itemLayout', { localTitle, demoStyle, demo, howToUse, cssDescription }) %>

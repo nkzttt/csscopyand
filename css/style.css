@@ -196,10 +196,26 @@ body.as-iframe::-webkit-scrollbar-thumb {
   margin-bottom: 16px;
   font-size: 18px;
 }
+.itemSection__title--float {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.itemSection__title--float + p {
+  display: inline-block;
+}
 
 .demo {
   padding: 24px;
   background: #e7f291;
+}
+
+.resetCss {
+  padding-top: 4px;
+  padding-left: 8px;
+  font-size: 14px;
+}
+.resetCss__link {
+  margin: 0 8px;
 }
 
 .csscopyand__codeBlock {
@@ -233,13 +249,13 @@ body.as-iframe::-webkit-scrollbar-thumb {
   line-height: 1.7;
 }
 
-.jsDescription__body {
+.cssDescription__body {
   margin: -0.35em 0;
 }
-.jsDescription__body__text {
+.cssDescription__body__text {
   line-height: 1.7;
 }
-.jsDescription__body__code + .jsDescription__body__text {
+.cssDescription__body__code + .cssDescription__body__text {
   margin-top: 24px;
 }
 
@@ -253,16 +269,16 @@ body.as-iframe::-webkit-scrollbar-thumb {
   font-style: italic;
 }
 
-.jsBasics {
+.cssBasics {
   list-style: none;
 }
-.jsBasics__item {
+.cssBasics__item {
   margin-bottom: 24px;
 }
-.jsBasics__item:last-child {
+.cssBasics__item:last-child {
   margin-bottom: 0;
 }
-.jsBasics__item__body {
+.cssBasics__item__body {
   margin-top: calc(16px - 0.35em);
   margin-bottom: -0.35em;
   line-height: 1.7;

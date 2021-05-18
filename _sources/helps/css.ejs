@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <%- include('../_ejsModules/head', { localTitle: 'JavaScriptの基本' }) %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('../_ejsModules/header', { isIndex: false }) %>
+      <main class="main">
+        <p class="backLink" data-js-selector="back">
+          <span class="backLink__icon fas fa-arrow-left"></span>戻る
+        </p>
+        <h1 class="main__title">JavaScriptの基本</h1>
+        <ul class="cssBasics">
+          <li class="cssBasics__item">
+            <p data-js-selector="accordion" class="button">
+              どこに書けばいい？
+            </p>
+            <p class="cssBasics__item__body">
+              後に読み込まれる CSS が優先されるため、<code class="inlineCode"
+                >.css</code
+              >ファイルの最後の行に追加していただくのが安心です。<br />
+              複数の<code class="inlineCode">.css</code
+              >ファイルが読み込まれている場合は最後のファイルか、または新たに<code
+                class="inlineCode"
+                >.css</code
+              >ファイルを作成して、一番最後に読み込むようにしてください。<br />
+            </p>
+          </li>
+        </ul>
+      </main>
+      <%- include('../_ejsModules/footer') %>
+    </div>
+    <%- include('../_ejsModules/foot') %>
+  </body>
+</html>

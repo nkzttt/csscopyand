@@ -10,20 +10,30 @@
         <h1 class="main__title"><%= localTitle %></h1>
         <section class="itemSection">
           <h2 class="itemSection__title">デモ</h2>
-          <%- demo %>
+          <%- demoStyle %> <%- demo %>
         </section>
         <section class="itemSection">
-          <h2 class="itemSection__title">JSコードコピー</h2>
+          <h2 class="itemSection__title itemSection__title--float">
+            CSSコードコピー
+          </h2>
+          <p class="resetCss">
+            ※ 当サイトのリセットCSSには<a
+              href="https://github.com/filipelinhares/ress"
+              class="textLink resetCss__link"
+              target="_blank"
+              >ress</a
+            >を使用しています。
+          </p>
           <div class="csscopyand">
             <div class="csscopyand__codeBlock">
               <pre
                 class="csscopyand__codeBlock__codes"
-              ><code class="language-js" data-js-selector="csscopyand"></code></pre>
+              ><code class="language-css" data-js-selector="csscopyand"></code></pre>
               <p
                 class="csscopyand__codeBlock__copy"
                 data-js-selector="copy"
                 data-js-attributes="csscopyand"
-                onclick="gtag('event', 'cv', { event_category: 'copiedJsCodes' })"
+                onclick="gtag('event', 'cv', { event_category: 'copiedCssCodes' })"
               >
                 <span
                   class="far fa-clipboard csscopyand__codeBlock__copy__icon"
@@ -32,9 +42,8 @@
               </p>
             </div>
             <p>
-              <a href="/csscopyand/helps/js.html" class="textLink"
-                >どこに書けばいい？どこで読み込めばいい？ JavaScript
-                の基本を確認する</a
+              <a href="/csscopyand/helps/css.html" class="textLink"
+                >どこに書けばいい？ CSS の基本を確認する</a
               >
             </p>
           </div>
@@ -45,7 +54,7 @@
         </section>
         <section class="itemSection">
           <h2 class="itemSection__title">解説</h2>
-          <%- jsDescription %>
+          <%- cssDescription %>
         </section>
         <section class="itemSection">
           <h2 class="itemSection__title">ヘルプ・コンタクト</h2>
@@ -63,6 +72,6 @@
       </main>
       <%- include('./footer') %>
     </div>
-    <%- include('./itemsFoot') %> <%- demoScript %>
+    <%- include('./itemsFoot') %>
   </body>
 </html>
