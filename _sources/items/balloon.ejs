@@ -1,0 +1,113 @@
+<!-- prettier-ignore -->
+<% const localTitle = '吹き出し'; %>
+
+<!-- prettier-ignore -->
+<% const demoStyle = `
+<style data-js-selector="sourceLazy" data-js-attributes="csscopyand">
+  .cca-balloon {
+    display: inline-block;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 1px gray;
+    background-color: white;
+  }
+  .cca-balloon::before,
+  .cca-balloon::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 10px transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .cca-balloon::before {
+    border-top-color: gray;
+    bottom: -20px;
+  }
+  .cca-balloon::after {
+    border-top-color: white;
+    bottom: -18px;
+  }
+</style>
+`; %>
+
+<!-- prettier-ignore -->
+<% const demo = `
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <p class="cca-balloon">吹き出し</p>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const howToUse = `
+<div class="howToUse">
+  <p class="howToUse__description">
+    <code class="inlineCode">p</code>要素を１つ用意し、<code class="inlineCode"
+      >class="cca-balloon"</code
+    >を付与してください。<br />
+    直下に任意の文字列を記述してください。<br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const cssDescription = `
+<div class="cssDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedCssCodes' })"
+  >
+    CSSコードの解説を見てみる
+  </p>
+  <div class="cssDescription__body">
+    <p class="cssDescription__body__text">
+      吹き出しは中の要素に応じて大きさが変わるように<code class="inlineCode"
+        >display: inline-block;</code
+      >を当てておきます。<br />
+      矢印を絶対配置するため、<code class="inlineCode">position: relative;</code
+      >を当てておきます。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 1, 8"></code></pre>
+    <p class="cssDescription__body__text">
+      吹き出しの矢印部分を作っていきます。<br />
+      サイズを0にして境界線を引くと、上下左右それぞれの方向を向いた三角形を作ることができます。<br />
+      一度四方の境界線の色を透明にしてから、希望する向きにのみ後から色を付けます。<br />
+      配置は親要素からの絶対配置で左右中央になるようにしておきます。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 9, 20"></code></pre>
+    <p class="cssDescription__body__text">
+      今回は下向き矢印にするため、<code class="inlineCode"
+        >border-top-color</code
+      >で色を付けます。<br />
+      <code class="inlineCode">::before</code>は境界線の本体です。<br />
+      要素の下から更に矢印の幅分下にずらして配置します。<br />
+      <code class="inlineCode">::after</code>を<code class="inlineCode"
+        >::before</code
+      >の上に重ねて境界線を表現します。<br />
+      配置は境界線の幅分少し上に、色は吹き出し内部の色に合わせます。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 21, 28"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<%- include('../_ejsModules/itemLayout', { localTitle, demoStyle, demo, howToUse, cssDescription }) %>
