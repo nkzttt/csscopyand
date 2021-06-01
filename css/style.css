@@ -243,13 +243,13 @@ body.as-iframe::-webkit-scrollbar-thumb {
   display: block;
 }
 
-.combineWithJs {
+.howToUse__description {
   margin-top: -0.35em;
   margin-bottom: calc(24px - 0.35em);
   line-height: 1.7;
 }
 
-.howToUse__description {
+.combineWithJs {
   margin-top: -0.35em;
   margin-bottom: calc(24px - 0.35em);
   line-height: 1.7;

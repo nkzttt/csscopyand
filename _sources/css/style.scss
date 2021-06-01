@@ -235,18 +235,18 @@ body {
   }
 }
 
-.combineWithJs {
-  margin-top: -0.35em;
-  margin-bottom: calc(#{functions.multiplicationSpacingUnit(3)} - 0.35em);
-  line-height: 1.7;
-}
-
 .howToUse {
   &__description {
     margin-top: -0.35em;
     margin-bottom: calc(#{functions.multiplicationSpacingUnit(3)} - 0.35em);
     line-height: 1.7;
   }
+}
+
+.combineWithJs {
+  margin-top: -0.35em;
+  margin-bottom: calc(#{functions.multiplicationSpacingUnit(3)} - 0.35em);
+  line-height: 1.7;
 }
 
 .cssDescription {
