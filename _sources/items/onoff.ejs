@@ -31,6 +31,14 @@
 `; %>
 
 <!-- prettier-ignore -->
+<% const combineWithJs = `
+<p class="combineWithJs">
+  オンオフ時の表示を切り替えたり、何かしらの処理を行いたい場合は JavaScript
+  と組み合わせてください。<br />
+</p>
+`; %>
+
+<!-- prettier-ignore -->
 <% const howToUse = `
 <div class="howToUse">
   <p class="howToUse__description">
@@ -91,4 +99,4 @@
 `; %>
 
 <!-- prettier-ignore -->
-<%- include('../_ejsModules/itemLayout', { localTitle, demoStyle, demo, howToUse, cssDescription }) %>
+<%- include('../_ejsModules/itemLayout', { localTitle, demoStyle, demo, howToUse, combineWithJs, cssDescription }) %>

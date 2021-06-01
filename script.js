@@ -146,3 +146,13 @@
     }
   });
 })();
+
+/**
+ * combine link
+ */
+(function () {
+  var trigger = document.querySelector('[data-js-selector="combineWithJs"]');
+  if (!trigger) return;
+  trigger.href = location.href.replace('csscopyand', 'jscopyand');
+  trigger.innerText = document.title.replace('CSS', 'JavaScript');
+})();

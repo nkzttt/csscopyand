@@ -52,6 +52,21 @@
           <h2 class="itemSection__title">使い方</h2>
           <%- howToUse %>
         </section>
+        <% if (combineWithJs) { %>
+        <section class="itemSection">
+          <h2 class="itemSection__title">JavaScriptと組み合わせる</h2>
+          <%- combineWithJs %>
+          <p>
+            <a
+              href="#"
+              target="_blank"
+              class="textLink"
+              data-js-selector="combineWithJs"
+              >JavaScriptコピペ館</a
+            >
+          </p>
+        </section>
+        <% } %>
         <section class="itemSection">
           <h2 class="itemSection__title">解説</h2>
           <%- cssDescription %>
