@@ -1,0 +1,251 @@
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+
+
+<!-- prettier-ignore -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-NXBYB3XL7L"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-WRCFW19FD5');
+</script>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>オンオフ（トグル）ボタン | CSSコピペ館</title>
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+<link rel="stylesheet" href="/csscopyand/css/style.css" />
+
+<link rel="stylesheet" href="/csscopyand/lib/prism.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <a href="/csscopyand/" class="header__titleLink">
+    
+    <p class="header__titleLink__text">
+      <span class="header__titleLink__text__prefixIcon fab fa-css3-alt"></span
+      >CSSコピペ館
+    </p>
+    
+  </a>
+</header>
+
+      <main class="main">
+        <h1 class="main__title">オンオフ（トグル）ボタン</h1>
+        <section class="itemSection">
+          <h2 class="itemSection__title">デモ</h2>
+          
+<style data-js-selector="sourceLazy" data-js-attributes="csscopyand">
+  .cca-onOffButton {
+    -webkit-appearance: none;
+    width: 60px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 17px;
+    background-color: lightgray;
+    box-sizing: content-box;
+  }
+  .cca-onOffButton::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+  }
+</style>
+ 
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <input type="range" min="0" max="1" class="cca-onOffButton" />
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title itemSection__title--float">
+            CSSコードコピー
+          </h2>
+          <p class="resetCss">
+            ※ 当サイトのリセットCSSには<a
+              href="https://github.com/filipelinhares/ress"
+              class="textLink resetCss__link"
+              target="_blank"
+              >ress</a
+            >を使用しています。
+          </p>
+          <div class="csscopyand">
+            <div class="csscopyand__codeBlock">
+              <pre
+                class="csscopyand__codeBlock__codes"
+              ><code class="language-css" data-js-selector="csscopyand"></code></pre>
+              <p
+                class="csscopyand__codeBlock__copy"
+                data-js-selector="copy"
+                data-js-attributes="csscopyand"
+                onclick="gtag('event', 'cv', { event_category: 'copiedCssCodes' })"
+              >
+                <span
+                  class="far fa-clipboard csscopyand__codeBlock__copy__icon"
+                ></span
+                >コピーする
+              </p>
+            </div>
+            <p>
+              <a href="/csscopyand/helps/css.html" class="textLink"
+                >どこに書けばいい？ CSS の基本を確認する</a
+              >
+            </p>
+          </div>
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">使い方</h2>
+          
+<div class="howToUse">
+  <p class="howToUse__description">
+    <code class="inlineCode">input</code
+    >要素を１つ用意し、以下のように属性を設定してください。<br />
+    ・<code class="inlineCode">type="range"</code><br />
+    ・<code class="inlineCode">min="0"</code><br />
+    ・<code class="inlineCode">max="1"</code><br />
+    ・<code class="inlineCode">class="cca-onOffButton"</code><br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">解説</h2>
+          
+<div class="cssDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedCssCodes' })"
+  >
+    CSSコードの解説を見てみる
+  </p>
+  <div class="cssDescription__body">
+    <p class="cssDescription__body__text">
+      標準のスタイルを無効にするため<code class="inlineCode"
+        >-webkit-appearance: none;</code
+      >を当てます。<br />
+      移動するボタンの大きさを<code class="inlineCode">30px</code
+      >とし、横幅は２倍に、縦幅は等倍にします。<br />
+      角丸の値は上下に<code class="inlineCode">2px</code
+      >の余白が入るため、それを考慮して正円になる値にします。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 1, 9"></code></pre>
+    <p class="cssDescription__body__text">
+      移動するボタンにも標準のスタイルを無効にするため<code class="inlineCode"
+        >-webkit-appearance: none;</code
+      >を当てます。<br />
+      大きさを<code class="inlineCode">30px</code>、角丸は自身の半分<code
+        class="inlineCode"
+        >50%</code
+      >にして正円にします。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 10, 16"></code></pre>
+  </div>
+</div>
+
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">ヘルプ・コンタクト</h2>
+          <p class="help">
+            機能に関するご質問は、このページの下部に表示されている Twitter
+            のアイコンから Twitter に遷移後、 DM 等でご連絡ください。<br />
+            導入サポートやカスタマイズも有償にてお受け致しますので、 DM
+            等でご連絡ください。<br />
+          </p>
+        </section>
+        <section class="itemSection">
+          <h2 class="itemSection__title">他のコードを探す</h2>
+          <iframe src="/csscopyand/" class="indexesFrame"></iframe>
+        </section>
+      </main>
+      <footer class="footer">
+  <ul class="footer__contact">
+    <li class="footer__contact__item">
+      <a
+        href="https://twitter.com/bgn_nakazato"
+        class="footer__contact__item__link"
+      >
+        <span class="fab fa-twitter"></span>
+      </a>
+    </li>
+    <li class="footer__contact__item">
+      <a
+        href="https://github.com/nkzttt/csscopyand"
+        class="footer__contact__item__link"
+      >
+        <span class="fab fa-github"></span>
+      </a>
+    </li>
+  </ul>
+  <p class="copyright">
+    <span class="copyright__mark">&copy;</span> 2021 nkzttt
+  </p>
+</footer>
+<a href="https://twitter.com/bgn_nakazato" target="_blank" class="notification">
+  <div class="notification__icon far fa-hand-point-right"></div>
+  <p class="notification__text">
+    リクエスト受付中です。<br />
+    Twitter の固定ツイートか DM にてご連絡ください。<br />
+  </p>
+</a>
+
+    </div>
+    <!--download from https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript-->
+<script src="/csscopyand/lib/prism.js" data-manual></script>
+<script>
+  Prism.hooks.add('before-sanity-check', function (env) {
+    env.element.innerHTML = env.element.innerHTML.replace(/<br>/g, '\n');
+    env.code = env.element.textContent;
+  });
+</script>
+<!-- icons are on https://fontawesome.com/icons?d=gallery&m=free -->
+<script
+  src="https://kit.fontawesome.com/f7818d968c.js"
+  crossorigin="anonymous"
+></script>
+<script src="/csscopyand/script.js"></script>
+
+
+  </body>
+</html>
+

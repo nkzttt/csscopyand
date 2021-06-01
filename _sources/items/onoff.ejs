@@ -1,0 +1,94 @@
+<!-- prettier-ignore -->
+<% const localTitle = 'オンオフ（トグル）ボタン'; %>
+
+<!-- prettier-ignore -->
+<% const demoStyle = `
+<style data-js-selector="sourceLazy" data-js-attributes="csscopyand">
+  .cca-onOffButton {
+    -webkit-appearance: none;
+    width: 60px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 17px;
+    background-color: lightgray;
+    box-sizing: content-box;
+  }
+  .cca-onOffButton::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+  }
+</style>
+`; %>
+
+<!-- prettier-ignore -->
+<% const demo = `
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <input type="range" min="0" max="1" class="cca-onOffButton" />
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const howToUse = `
+<div class="howToUse">
+  <p class="howToUse__description">
+    <code class="inlineCode">input</code
+    >要素を１つ用意し、以下のように属性を設定してください。<br />
+    ・<code class="inlineCode">type="range"</code><br />
+    ・<code class="inlineCode">min="0"</code><br />
+    ・<code class="inlineCode">max="1"</code><br />
+    ・<code class="inlineCode">class="cca-onOffButton"</code><br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const cssDescription = `
+<div class="cssDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedCssCodes' })"
+  >
+    CSSコードの解説を見てみる
+  </p>
+  <div class="cssDescription__body">
+    <p class="cssDescription__body__text">
+      標準のスタイルを無効にするため<code class="inlineCode"
+        >-webkit-appearance: none;</code
+      >を当てます。<br />
+      移動するボタンの大きさを<code class="inlineCode">30px</code
+      >とし、横幅は２倍に、縦幅は等倍にします。<br />
+      角丸の値は上下に<code class="inlineCode">2px</code
+      >の余白が入るため、それを考慮して正円になる値にします。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 1, 9"></code></pre>
+    <p class="cssDescription__body__text">
+      移動するボタンにも標準のスタイルを無効にするため<code class="inlineCode"
+        >-webkit-appearance: none;</code
+      >を当てます。<br />
+      大きさを<code class="inlineCode">30px</code>、角丸は自身の半分<code
+        class="inlineCode"
+        >50%</code
+      >にして正円にします。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 10, 16"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<%- include('../_ejsModules/itemLayout', { localTitle, demoStyle, demo, howToUse, cssDescription }) %>
