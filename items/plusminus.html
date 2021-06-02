@@ -40,7 +40,7 @@
   content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
 />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<title>ホバーで画像拡大 | CSSコピペ館</title>
+<title>プラスマイナスアイコン（ホバーアニメーション付き） | CSSコピペ館</title>
 <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
 <link rel="stylesheet" href="/csscopyand/css/style.css" />
 
@@ -61,29 +61,44 @@
 </header>
 
       <main class="main">
-        <h1 class="main__title">ホバーで画像拡大</h1>
+        <h1 class="main__title">プラスマイナスアイコン（ホバーアニメーション付き）</h1>
         <section class="itemSection">
           <h2 class="itemSection__title">デモ</h2>
           
 <style data-js-selector="sourceLazy" data-js-attributes="csscopyand">
-  .cca-hoverImage {
-    width: 300px;
-    overflow: hidden;
+  .cca-iconPlus {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
   }
-  .cca-hoverImage > img {
+  .cca-iconPlus::before,
+  .cca-iconPlus::after {
+    content: '';
+    display: block;
     width: 100%;
-    height: auto;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-bottom: solid 3px black;
     transition: transform 300ms ease-out;
   }
-  .cca-hoverImage > img:hover {
-    transform: scale(1.2);
+  .cca-iconPlus::after {
+    transform: rotate(90deg);
+    transition-delay: 100ms;
+    transition-duration: 200ms;
+  }
+  .cca-iconPlus:hover::before {
+    transform: rotate(180deg);
+  }
+  .cca-iconPlus:hover::after {
+    transform: rotate(180deg);
   }
 </style>
  
 <div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
-  <div class="cca-hoverImage">
-    <img src="/csscopyand/images/demo.jpg" alt="デモ画像" />
-  </div>
+  <span class="cca-iconPlus"></span>
 </div>
 
         </section>
@@ -128,11 +143,10 @@
           
 <div class="howToUse">
   <p class="howToUse__description">
-    <code class="inlineCode">div</code>要素を１つ用意し、<code
+    <code class="inlineCode">span</code>要素を１つ用意し、<code
       class="inlineCode"
-      >class="cca-hoverImage"</code
+      >class="cca-iconPlus"</code
     >を付与してください。<br />
-    直下に任意の画像を配置してください。<br />
   </p>
   <div>
     <p class="button" data-js-selector="accordion" data-js-attributes="remove">
@@ -158,14 +172,25 @@
   </p>
   <div class="cssDescription__body">
     <p class="cssDescription__body__text">
-      画像拡大時に画像が枠外に出ないよう、親要素に<code class="inlineCode"
-        >overflow: hidden;</code
+      最初に配置・アイコンの大きさを決めます。<br />
+      テキストが回り込むように<code class="inlineCode"
+        >display: inline-block;</code
+      >を当てておきます。<br />
+      アイコンの表示要素は絶対配置にするため、<code class="inlineCode"
+        >position: relative;</code
       >を当てておきます。<br />
     </p>
     <pre
       class="cssDescription__body__code"
-    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 1, 4"></code></pre>
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 1, 6"></code></pre>
     <p class="cssDescription__body__text">
+      プラスの棒を<code class="inlineCode">before</code>と<code
+        class="inlineCode"
+        >after</code
+      >で表現します。<br />
+      横幅いっぱいの長さ、高さは０、<code class="inlineCode">top: 50%;</code
+      >で中央配置にします。<br />
+      棒は<code class="inlineCode">border-bottom</code>で表現します。<br />
       ホバー時にアニメーションさせるため、<code class="inlineCode"
         >transition</code
       >プロパティを設定します。<br />
@@ -179,17 +204,28 @@
     </p>
     <pre
       class="cssDescription__body__code"
-    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 5, 9"></code></pre>
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 7, 18"></code></pre>
     <p class="cssDescription__body__text">
-      拡大には<code class="inlineCode">transform</code>の<code
-        class="inlineCode"
-        >scale</code
-      >を使います。<br />
-      本デモでは1.2倍にまで拡大させています。<br />
+      <code class="inlineCode">before</code>と<code class="inlineCode"
+        >after</code
+      >で用意した２本の棒のうち１本を<code class="inlineCode"
+        >transform: rotate(90deg);</code
+      >で縦向きにします。<br />
+      横棒とアニメーションを少し変化させます。<br />
+      <code class="inlineCode">transition-delay</code
+      >でアニメーション開始までの遅延時間を設定、<code class="inlineCode"
+        >transition-duration</code
+      >でアニメーション時間を上書きしています。<br />
     </p>
     <pre
       class="cssDescription__body__code"
-    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 10, 12"></code></pre>
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 19, 23"></code></pre>
+    <p class="cssDescription__body__text">
+      ホバー時に回転の角度を揃えることで１本の線に見せます。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 24, 29"></code></pre>
   </div>
 </div>
 
