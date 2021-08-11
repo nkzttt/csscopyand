@@ -1,0 +1,147 @@
+<!-- prettier-ignore -->
+<% const localTitle = 'でこぼこボーダー'; %>
+
+<!-- prettier-ignore -->
+<% const demoStyle = `
+<style data-js-selector="sourceLazy" data-js-attributes="csscopyand">
+  .cca-roughBorder {
+    position: relative;
+    padding-bottom: 25px;
+    overflow: hidden;
+    background-color: white;
+  }
+  .cca-roughBorder::before {
+    content: '';
+    display: block;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: gray;
+  }
+  .cca-roughBorder::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    background-color: white;
+    box-shadow: 25px 10px white, 50px 0 white, 75px 10px white, 100px 0 white,
+      125px 10px white, 150px 0 white, 175px 10px white, 200px 0 white,
+      225px 10px white, 250px 0 white, 275px 10px white, 300px 0 white,
+      325px 10px white, 350px 0 white, 375px 10px white, 400px 0 white,
+      425px 10px white, 450px 0 white, 475px 10px white, 500px 0 white,
+      525px 10px white, 550px 0 white, 575px 10px white, 600px 0 white,
+      625px 10px white, 650px 0 white, 675px 10px white, 700px 0 white,
+      725px 10px white, 750px 0 white, 775px 10px white, 800px 0 white,
+      825px 10px white, 850px 0 white, 875px 10px white, 900px 0 white,
+      925px 10px white, 950px 0 white, 975px 10px white, 1000px 0 white,
+      1025px 10px white, 1050px 0 white, 1075px 10px white, 1100px 0 white,
+      1125px 10px white, 1150px 0 white, 1175px 10px white, 1200px 0 white,
+      1225px 10px white, 1250px 0 white, 1275px 10px white, 1300px 0 white,
+      1325px 10px white, 1350px 0 white, 1375px 10px white, 1400px 0 white,
+      1425px 10px white, 1450px 0 white, 1475px 10px white, 1500px 0 white,
+      1525px 10px white, 1550px 0 white, 1575px 10px white, 1600px 0 white,
+      1625px 10px white, 1650px 0 white, 1675px 10px white, 1700px 0 white,
+      1725px 10px white, 1750px 0 white, 1775px 10px white, 1800px 0 white,
+      1825px 10px white, 1850px 0 white, 1875px 10px white, 1900px 0 white,
+      1925px 10px white, 1950px 0 white, 1975px 10px white, 2000px 0 white;
+  }
+</style>
+`; %>
+
+<!-- prettier-ignore -->
+<% const demo = `
+<div class="demo" data-js-selector="source" data-js-attributes="demoHtml">
+  <div class="cca-roughBorder">でこぼこボーダー</div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const howToUse = `
+<div class="howToUse">
+  <p class="howToUse__description">
+    <code class="inlineCode">div</code>要素を１つ用意し、<code
+      class="inlineCode"
+      >class="cca-roughBorder"</code
+    >を付与してください。<br />
+    色は適宜変更してください。<br />
+  </p>
+  <div>
+    <p class="button" data-js-selector="accordion" data-js-attributes="remove">
+      サンプルHTMLを表示する
+    </p>
+    <pre><code class="language-html" data-js-selector="demoHtml"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<% const combineWithJs = null; %>
+
+<!-- prettier-ignore -->
+<% const cssDescription = `
+<div class="cssDescription">
+  <p
+    class="button"
+    data-js-selector="accordion"
+    data-js-attributes="remove"
+    onclick="gtag('event', 'cv', { event_category: 'openedCssCodes' })"
+  >
+    CSSコードの解説を見てみる
+  </p>
+  <div class="cssDescription__body">
+    <p class="cssDescription__body__text">
+      入れ物のスタイルを定義しています。<br />
+      でこぼこを表す要素を絶対配置にするため、<code class="inlineCode"
+        >position: relative;</code
+      >を当てておきます。<br />
+      ボーダーの高さ分の余白を<code class="inlineCode">padding-bottom</code
+      >で確保します。<br />
+      でこぼこを表す要素は親要素からはみ出るため、はみ出た部分を表示させないように<code
+        class="inlineCode"
+        >overflow: hidden;</code
+      >を当てておきます。<br />
+      本デモでは背景色を<code class="inlineCode">white</code
+      >にしています。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 1, 6"></code></pre>
+    <p class="cssDescription__body__text">
+      ボーダーの基本となる部分を疑似要素<code class="inlineCode">::before</code
+      >で表現していきます。<br />
+      高さは入れ物に設定した余白を超えない大きさにします。<br />
+      絶対配置で入れ物の下に固定、横幅がいっぱいになるようにします。<br />
+      本デモではボーダーの色を<code class="inlineCode">gray</code
+      >にしています。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 7, 16"></code></pre>
+    <p class="cssDescription__body__text">
+      ボーダーのでこぼこ部分を疑似要素<code class="inlineCode">::after</code
+      >で表現していきます。<br />
+      縦横幅を疑似要素<code class="inlineCode">::before</code
+      >で設定したボーダーの高さと同様にし、絶対配置で左下に固定、でこぼこの幅が<code
+        class="inlineCode"
+        >5px</code
+      >になるようにずらしておきます。 <br />
+      でこぼこ１つ１つを<code class="inlineCode">box-shadow</code
+      >で表現します。<br />
+      <code class="inlineCode">5px</code
+      >間隔になるように右方向に、上下交互にずらしながら影を落としていきます。<br />
+      色は入れ物の背景色に揃えます。<br />
+    </p>
+    <pre
+      class="cssDescription__body__code"
+    ><code class="language-css" data-js-selector="quote" data-js-attributes="csscopyand, 17, 46"></code></pre>
+  </div>
+</div>
+`; %>
+
+<!-- prettier-ignore -->
+<%- include('../_ejsModules/itemLayout', { localTitle, demoStyle, demo, howToUse, combineWithJs, cssDescription }) %>
